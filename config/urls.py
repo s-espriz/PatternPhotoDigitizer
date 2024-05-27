@@ -31,6 +31,6 @@ urlpatterns = [
 	path('optimize/<int:pk>/', Optimize, name='optimize'),
 	path('optimizing/<int:pk>', Optimizing, name="optimizing"),
     path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})
+    path(r'^statics/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})
     
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
