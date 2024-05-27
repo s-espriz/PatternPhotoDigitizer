@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
-CSRF_TRUSTED_ORIGINS = [ "http://digitizer.esp.ir", 
+CSRF_TRUSTED_ORIGINS = [ 
+    "http://digitizer.esp.ir", 
     "https://digitizer.esp.ir",
 ]
 
@@ -76,7 +77,8 @@ MIDDLEWARE = [ 'django.middleware.security.SecurityMiddleware',
 CORS_ALLOW_ALL_ORIGINS = False 
 
 CORS_ALLOWED_ORIGINS = [ 
-    "http://digitizer.esp.ir", "https://digitizer.esp.ir",
+    "http://digitizer.esp.ir",
+    "https://digitizer.esp.ir",
     # Add other trusted origins here
 ]
 
@@ -149,7 +151,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_URL = '/statics/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/home/mophi/WorkingImage/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/home/mophi/digitizer/media')
 FORCE_SERVE_STATIC = True
 
 # Default primary key field type
