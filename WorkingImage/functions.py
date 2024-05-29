@@ -128,7 +128,7 @@ def create_dxf_doc(image , blur_size = 9,  threshold_percentage = 60 ,arz = 122.
 
 
 def create_cheching_image(image , blur_size = 9,  threshold_percentage = 60 ,arz = 122.2 , tool = 89.7, epsilon = 9, grid_size_cm = 10.0, small_things = 3 , spline = False , degree_treshold = 150, spline_method = "normal") -> bool :
-    print(spline_method) 
+    
     frame  = [(0,0),(image.shape[1],0),(image.shape[1],image.shape[0]),(0,image.shape[0]),(0,0)]
     doc = create_dxf_doc(image, blur_size,threshold_percentage,arz,tool,epsilon,grid_size_cm,small_things,spline,degree_treshold, methods_spline = spline_method)
     msp = doc.modelspace()
