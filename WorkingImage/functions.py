@@ -179,7 +179,19 @@ def create_cheching_image(image , blur_size = 9,  threshold_percentage = 60 ,arz
     # foreground_resized = cv2.resize(foreground, (background.shape[1], background.shape[0]))
 
     # Blend the images
-    blended = cv2.addWeighted(background, 0.5, foreground_flipped,0.5, 0)  # Adjust blending ratio as needed
+    bg_shape = background.shape
+    fg_shape = foreground_flipped.shape
+
+    # Determine the target dimensions
+    target_height = min(bg_shape[0], fg_shape[0])
+    target_width = min(bg_shape[1], fg_shape[1])
+
+    # Resize both images to the target dimensions
+    background_resized = cv2.resize(background, (target_width, target_height))
+    foreground_resized = cv2.resize(foreground_flipped, (target_width, target_height))
+
+
+    blended = cv2.addWeighted(background_resized, 0.5, foreground_resized,0.5, 0)  # Adjust blending ratio as needed
 
 
 
