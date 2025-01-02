@@ -5,3 +5,4 @@ WorkingImage/__pycache__/
 config/__pycache__/
 env/
 media/
+WorkingImage/migrations/__pycache__/
