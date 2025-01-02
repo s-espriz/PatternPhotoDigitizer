@@ -164,7 +164,7 @@ from pathlib import Path
 
 # Define the folders as Path objects
 folders_to_create = [
-    Path('media/pictures'),
+    Path('media/pictures/optimized'),
 ]
 
 # Create each folder
