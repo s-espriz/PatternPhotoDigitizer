@@ -6,3 +6,6 @@ config/__pycache__/
 env/
 media/
 WorkingImage/migrations/__pycache__/
+thresholded_img.jpg
+png_export.png
+blended_image.jpg
