@@ -17,7 +17,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -151,7 +150,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_URL = '/statics/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/home/mophi/digitizer/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FORCE_SERVE_STATIC = True
 
 # Default primary key field type
@@ -160,3 +159,16 @@ FORCE_SERVE_STATIC = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('home')
+
+from pathlib import Path
+
+# Define the folders as Path objects
+folders_to_create = [
+    Path('media/pictures'),
+    Path('media/videos'),
+    Path('static/uploads'),
+]
+
+# Create each folder
+for folder in folders_to_create:
+    folder.mkdir(parents=True, exist_ok=True)

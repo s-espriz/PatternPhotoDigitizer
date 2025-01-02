@@ -146,7 +146,7 @@ def Optimizing(request, pk):
     picture.save()
     def MainFunction(request="GET"):
         # loading image into cv2 array 
-        img = cv2.imread(f'../media/{picture_name}')
+        img = cv2.imread(f'./media/{picture_name}')
         print(f'img is {img}')
         checking_image = create_cheching_image(image= img , threshold_percentage=threshold_percentage ,tool=float(tool), epsilon=int(epsilon) , blur_size= int(blur), grid_size_cm=float(grid_size), spline=spline , degree_treshold= int(degree_threshold) , small_things= int(small_things), spline_method = methods_spline.lower())
         dxf_doc = create_final_image(image= img , threshold_percentage=threshold_percentage ,tool=float(tool), epsilon=int(epsilon) , blur_size= int(blur), spline=spline , degree_treshold= int(degree_threshold) , small_things= int(small_things), spline_method = methods_spline.lower() )
@@ -165,7 +165,7 @@ def Optimizing(request, pk):
         picture_name_final = picture_name.replace("/", "_")
         #جهت ذخیره
         #---------------------------
-        cv2.imwrite(f'../media/pictures/optimized/{picture_name_final}', checking_image)
+        cv2.imwrite(f'./media/pictures/optimized/{picture_name_final}', checking_image)
         picture.optimized_url = f"media/pictures/optimized/{picture_name_final}"
         picture.save()
         #---------------------------
@@ -178,7 +178,7 @@ def Optimizing(request, pk):
         #------------------------
         #-------هستش dxf اینم واسه فایل
         #------------------------
-        dxf_doc.saveas(f'../media/pictures/optimized/{picture_name_final}.dxf')
+        dxf_doc.saveas(f'./media/pictures/optimized/{picture_name_final}.dxf')
         #-----------------------
     MainFunction()
     #-------------
