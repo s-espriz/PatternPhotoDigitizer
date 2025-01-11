@@ -1,6 +1,5 @@
-Thanks for downloading this template!
+this Repository used to digitize the patterns using on image processing.
 
-Template Name: iPortfolio
-Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+the backend is Django. 
+
+it can be deployed on docker using Dockerfile
